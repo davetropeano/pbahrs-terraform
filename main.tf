@@ -56,11 +56,11 @@ variable ssh_notes {
 }
 variable osrefcode {
   description = "operating system reference code for VMs"
-  default = "WIN_2016-STD_64"
+  default = "DEBIAN_8_64"
 }
 variable datacenter {
   description = "location to deploy"
-  default = "wdc01"
+  default = "dal06"
 }
 variable domain {
   description = "domain of the VMs"
