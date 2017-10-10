@@ -16,12 +16,11 @@ resource "ibm_storage_file" "CTU17_fs_single_scaled" {
   capacity = "20"
   iops = "100"
 }
-
 #Create multiple VMs
-resource "ibm_compute_vm_instance" "single_scaled_vm_instances" {
+resource "ibm_compute_vm_instance" "burst_vm_instances" {
   count = "${var.vm_count}"
   os_reference_code = "${var.osrefcode}"
-  hostname = "${format("CTU17-single-scaled-%02d", count.index + 1)}"
+  hostname = "${format("CTU17.burst.%02d", count.index + 1)}"
   domain = "${var.domain}"
   datacenter = "${var.datacenter}"
   file_storage_ids = ["${ibm_storage_file.CTU17_fs_single_scaled.id}"]
