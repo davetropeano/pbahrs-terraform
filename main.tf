@@ -37,34 +37,45 @@ resource "ibm_compute_vm_instance" "single_scaled_vm_instances" {
 #Define variables
 variable slusername {
   description = "sl user name"
+  default = "bluecloudint@gmail.com"
 }
 variable slapikey {
   description = "sl api key"
+    default = ""
 }
 variable ssh_label {
   description = "ssh label"
+    default = "testkey"
 }
 variable ssh_key {
   description = "ssh public key"
+    default = ""
 }
 variable ssh_notes {
   description = "ssh public key notes"
+    default = "This is an ssh public key"
 }
 variable osrefcode {
   description = "operating system reference code for VMs"
+    default = "WIN_2016-STD_64"
 }
 variable datacenter {
   description = "location to deploy"
+  default = "wdc01"
 }
 variable domain {
   description = "domain of the VMs"
+  default = “mybluemix.com"
 }
 variable vm_count {
   description = "number of VMs"
+  default = "2"
 }
 variable privatevlanid {
-description = "private VLAN"
+  description = "private VLAN"
+  default = "123456"
 }
 variable publicvlanid {
   description = "public VLAN"
+  default = "123456"
 }
