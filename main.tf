@@ -5,9 +5,9 @@ provider "ibm" {
 }
 #Create ssh keys for virtual guests
 resource "ibm_compute_ssh_key" "ssh_key" {
-    label = "${var.ssh_label}"
-    notes = "${var.ssh_notes}"
-    public_key = "${var.ssh_key}"
+  label = "${var.ssh_label}"
+  notes = "${var.ssh_notes}"
+  public_key = "${var.ssh_key}"
 }
 #Create file storage
 resource "ibm_storage_file" "CTU17_fs_single_scaled" {
@@ -29,7 +29,7 @@ resource "ibm_compute_vm_instance" "single_scaled_vm_instances" {
   cores = 1
   memory = 1024
   disks = [25, 10]
-#  ssh_key_ids = ["${ibm_compute_ssh_key.ssh_key.id}"]
+  ssh_key_ids = ["${ibm_compute_ssh_key.ssh_key.id}"]
   local_disk = false
   private_vlan_id = "${var.privatevlanid}"
   public_vlan_id = "${var.publicvlanid}"
@@ -41,23 +41,23 @@ variable slusername {
 }
 variable slapikey {
   description = "sl api key"
-    default = ""
+  default = ""
 }
 variable ssh_label {
   description = "ssh label"
-    default = "testkey"
+  default = "testkey"
 }
 variable ssh_key {
   description = "ssh public key"
-    default = ""
+  default = ""
 }
 variable ssh_notes {
   description = "ssh public key notes"
-    default = "This is an ssh public key"
+  default = "This is an ssh public key"
 }
 variable osrefcode {
   description = "operating system reference code for VMs"
-    default = "WIN_2016-STD_64"
+  default = "WIN_2016-STD_64"
 }
 variable datacenter {
   description = "location to deploy"
@@ -65,7 +65,7 @@ variable datacenter {
 }
 variable domain {
   description = "domain of the VMs"
-  default = “mybluemix.com"
+  default = "mybluemix.com"
 }
 variable vm_count {
   description = "number of VMs"
