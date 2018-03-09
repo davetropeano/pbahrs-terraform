@@ -60,7 +60,7 @@ variable osrefcode {
 }
 variable datacenter {
   description = "location to deploy"
-  default = "dal06"
+  default = "dal12"
 }
 variable domain {
   description = "domain of the VMs"
