@@ -10,7 +10,7 @@ resource "ibm_compute_ssh_key" "ssh_key" {
   public_key = "${var.ssh_key}"
 }
 #Create file storage
-resource "ibm_storage_file" "CTU17_fs_single_scaled" {
+resource "ibm_storage_file" "Think_burst" {
   type = "Performance"
   datacenter = "${var.datacenter}"
   capacity = "20"
@@ -20,10 +20,10 @@ resource "ibm_storage_file" "CTU17_fs_single_scaled" {
 resource "ibm_compute_vm_instance" "burst_vm_instances" {
   count = "${var.vm_count}"
   os_reference_code = "${var.osrefcode}"
-  hostname = "${format("CTU17burst-%02d", count.index + 1)}"
+  hostname = "${format("THINKburst-%02d", count.index + 1)}"
   domain = "${var.domain}"
   datacenter = "${var.datacenter}"
-  file_storage_ids = ["${ibm_storage_file.CTU17_fs_single_scaled.id}"]
+  file_storage_ids = ["${ibm_storage_file.Think_burst.id}"]
   network_speed = 10
   cores = 1
   memory = 1024
