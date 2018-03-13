@@ -60,7 +60,7 @@ variable osrefcode {
 }
 variable datacenter {
   description = "location to deploy"
-  default = "dal06"
+  default = "dal09"
 }
 variable domain {
   description = "domain of the VMs"
@@ -72,9 +72,9 @@ variable vm_count {
 }
 variable privatevlanid {
   description = "private VLAN"
-  default = "582448"
+  default = "2182559"
 }
 variable publicvlanid {
   description = "public VLAN"
-  default = "582446"
+  default = "2279135"
 }
