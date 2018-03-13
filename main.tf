@@ -4,18 +4,18 @@ provider "ibm" {
   softlayer_api_key = "${var.slapikey}"
 }
 #Create ssh keys for virtual guests
-resource "ibm_compute_ssh_key" "ssh_key" {
-  label = "${var.ssh_label}"
-  notes = "${var.ssh_notes}"
-  public_key = "${var.ssh_key}"
-}
+#resource "ibm_compute_ssh_key" "ssh_key" {
+#  label = "${var.ssh_label}"
+#  notes = "${var.ssh_notes}"
+#  public_key = "${var.ssh_key}"
+#}
 #Create file storage
-resource "ibm_storage_file" "Think_burst" {
-  type = "Performance"
-  datacenter = "${var.datacenter}"
-  capacity = "20"
-  iops = "100"
-}
+#resource "ibm_storage_file" "Think_burst" {
+#  type = "Performance"
+#  datacenter = "${var.datacenter}"
+#  capacity = "20"
+#  iops = "100"
+#}
 #Create multiple VMs
 resource "ibm_compute_vm_instance" "burst_vm_instances" {
   count = "${var.vm_count}"
@@ -23,12 +23,12 @@ resource "ibm_compute_vm_instance" "burst_vm_instances" {
   hostname = "${format("THINKburst-%02d", count.index + 1)}"
   domain = "${var.domain}"
   datacenter = "${var.datacenter}"
-  file_storage_ids = ["${ibm_storage_file.Think_burst.id}"]
+#  file_storage_ids = ["${ibm_storage_file.Think_burst.id}"]
   network_speed = 10
   cores = 1
   memory = 1024
   disks = [25, 10]
-  ssh_key_ids = ["${ibm_compute_ssh_key.ssh_key.id}"]
+#  ssh_key_ids = ["${ibm_compute_ssh_key.ssh_key.id}"]
   local_disk = false
   private_vlan_id = "${var.privatevlanid}"
   public_vlan_id = "${var.publicvlanid}"
