@@ -72,9 +72,9 @@ variable vm_count {
 }
 variable privatevlanid {
   description = "private VLAN"
-  default = "123456"
+  default = "582448"
 }
 variable publicvlanid {
   description = "public VLAN"
-  default = "123456"
+  default = "582446"
 }
