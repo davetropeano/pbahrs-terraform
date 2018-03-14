@@ -1,21 +1,3 @@
-#Define the providers to use
-provider "ibm" {
-  softlayer_username = "${var.slusername}"
-  softlayer_api_key = "${var.slapikey}"
-}
-#Create ssh keys for virtual guests
-#resource "ibm_compute_ssh_key" "ssh_key" {
-#  label = "${var.ssh_label}"
-#  notes = "${var.ssh_notes}"
-#  public_key = "${var.ssh_key}"
-#}
-#Create file storage
-#resource "ibm_storage_file" "Think_burst" {
-#  type = "Performance"
-#  datacenter = "${var.datacenter}"
-#  capacity = "20"
-#  iops = "100"
-#}
 #Create multiple VMs
 resource "ibm_compute_vm_instance" "burst_vm_instances" {
   count = "${var.vm_count}"
