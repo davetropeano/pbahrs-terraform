@@ -3,7 +3,7 @@
 resource "ibm_compute_vm_instance" "burst_vm_instances1" {
   count = "${var.vm_count}"
   os_reference_code = "${var.osrefcode}"
-  hostname = "${format("THINKpublicprivate-%02d", count.index + 1)}"
+  hostname = "${var.userids}-${format("THINKpublicprivate-%02d", count.index + 1)}"
   domain = "${var.domain}"
   datacenter = "${var.datacenter}"
   file_storage_ids = ["${ibm_storage_file.Think_burst.id}"]
@@ -22,7 +22,7 @@ resource "ibm_compute_vm_instance" "burst_vm_instances1" {
 resource "ibm_compute_vm_instance" "burst_vm_instances2" {
   count = "${var.vm_count}"
   os_reference_code = "${var.osrefcode}"
-  hostname = "${format("THINKprivateonly-%02d", count.index + 1)}"
+  hostname = "${var.userids}-${format("THINKprivateonly-%02d", count.index + 1)}"
   domain = "${var.domain}"
   datacenter = "${var.datacenter}"
   file_storage_ids = ["${ibm_storage_file.Think_burst.id}"]
