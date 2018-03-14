@@ -7,7 +7,7 @@ resource "ibm_security_group" "sg1" {
 }
 
 #create a rule to limit traffic to https on public network
-resource "ibm_security_group_rule" "${var.userids}-allow_port_443" {
+resource "ibm_security_group_rule" "port_443" {
     direction = "ingress"
     ether_type = "IPv4"
     port_range_min = 443
@@ -25,7 +25,7 @@ resource "ibm_security_group" "sg2" {
     description = "allow my app traffic"
 }
 #create a rule to limit traffic to ssh on private network
-resource "ibm_security_group_rule" "${var.userids}-allow_port_22" {
+resource "ibm_security_group_rule" "port_22" {
     direction = "ingress"
     ether_type = "IPv4"
     port_range_min = 22
