@@ -13,6 +13,8 @@ resource "ibm_compute_vm_instance" "burst_vm_instances1" {
   disks = [25, 10]
   ssh_key_ids = ["${ibm_compute_ssh_key.ssh_key.id}"]
   local_disk = false
+  private_security_group_ids = ["{ibm_security_group.privatesg.id}"]
+  public_security_group_ids = ["{ibm_security_group.publicsg.id}"]
   private_vlan_id = "${var.privatevlanid}"
   public_vlan_id = "${var.publicvlanid}"
 }
@@ -31,6 +33,7 @@ resource "ibm_compute_vm_instance" "burst_vm_instances2" {
   memory = 1024
   disks = [25, 10]
   ssh_key_ids = ["${ibm_compute_ssh_key.ssh_key.id}"]
+  private_security_group_ids = ["{ibm_security_group.privatesg.id}"]
   local_disk = false
   private_vlan_id = "${var.privatevlanid}"
 }
