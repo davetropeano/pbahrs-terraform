@@ -2,11 +2,11 @@
 
 variable privatevlanid {
   description = "private VLAN"
-  default = "2260653"
+  default = "2259665"
 }
 variable publicvlanid {
   description = "public VLAN"
-  default = "2279135"
+  default = "2279413"
 }
 variable slusername {
   description = "sl user name"
