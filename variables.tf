@@ -1,5 +1,16 @@
 #Define variables
-
+variable userids {
+  description = "unique student id"
+  default = "student1"
+}
+variable slapikey {
+  description = "sl api key"
+  default = ""
+}
+variable ssh_key {
+  description = "ssh public key"
+  default = ""
+}
 variable privatevlanid {
   description = "private VLAN"
   default = "2259665"
@@ -12,18 +23,12 @@ variable slusername {
   description = "sl user name"
   default = "bluecloudint@gmail.com"
 }
-variable slapikey {
-  description = "sl api key"
-  default = ""
-}
+
 variable ssh_label {
   description = "ssh label"
   default = "testkey"
 }
-variable ssh_key {
-  description = "ssh public key"
-  default = ""
-}
+
 variable ssh_notes {
   description = "ssh public key notes"
   default = "This is an ssh public key"
