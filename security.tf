@@ -1,7 +1,7 @@
-# create a security group to limit communications with the virtual servers
+# create a security group to limit communications on the public network 
 # below are the policies for the group
 
-resource "ibm_security_group" "sg1" {
+resource "ibm_security_group" "publicsg" {
     name = "${var.userids}-securitygroup"
     description = "allow my app traffic"
 }
@@ -14,9 +14,16 @@ resource "ibm_security_group_rule" "${var.userids}-allow_port_443" {
     port_range_max = 443
     protocol = "tcp"
     remote_ip = 0.0.0.0/8
-    security_group_id = ${ibm_security_group.sg1.id}
+    security_group_id = ${ibm_security_group.publicsg.id}
 }
 
+# create a security group to limit communications on private network
+# below are the policies for the group
+
+resource "ibm_security_group" "privatesg" {
+    name = "${var.userids}-securitygroup"
+    description = "allow my app traffic"
+}
 #create a rule to limit traffic to ssh on private network
 resource "ibm_security_group_rule" "${var.userids}-allow_port_22" {
     direction = "ingress"
@@ -25,5 +32,5 @@ resource "ibm_security_group_rule" "${var.userids}-allow_port_22" {
     port_range_max = 22
     protocol = "tcp"
     remote_ip = 0.0.0.0/8
-    security_group_id = ${ibm_security_group.sg1.id}
+    security_group_id = ${ibm_security_group.privatesg.id}
 }
