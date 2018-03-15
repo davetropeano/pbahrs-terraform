@@ -5,4 +5,4 @@ The example architecture (see below) is designed to burst a series of virtual se
 ## Architecture diagram
 
 
-  ![Reference Pattern](https://github.com/pbahrs/TFDemo/blob/master/imgs/burst.png)
+  ![Reference Pattern](https://github.com/pbahrs/TFDemo/blob/master/imgs/labarch.png)
