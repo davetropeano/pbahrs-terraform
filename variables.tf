@@ -11,6 +11,9 @@ variable ssh_key {
   description = "ssh public key"
   default = ""
 }
+################################
+# Do not change the variables below
+################################
 variable privatevlanid {
   description = "private VLAN"
   default = "2259665"
