@@ -50,5 +50,5 @@ variable domain {
 }
 variable vm_count {
   description = "number of VMs"
-  default = "2"
+  default = "1"
 }
