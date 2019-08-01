@@ -1,5 +1,5 @@
 #Define the providers to use
 provider "ibm" {
-  softlayer_username = "${var.slusername}"
-  softlayer_api_key = "${var.slapikey}"
+  softlayer_username = "${var.classicIaaS_username}"
+  softlayer_api_key = "${var.classicIaaS_apikey}"
 }
