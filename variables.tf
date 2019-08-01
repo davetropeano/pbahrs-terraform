@@ -3,10 +3,19 @@ variable userids {
   description = "unique student id"
   default = "student1"
 }
-variable slapikey {
-  description = "sl api key"
-  default = ""
+
+variable "softlayer_username" {
+  description = "Enter your IBM Infrastructure (SoftLayer) full username, you can get this using: https://control.bluemix.net/account/user/profile"
 }
+
+variable "softlayer_api_key" {
+  description = "Enter your IBM Infrastructure (SoftLayer) API key, you can get this using: https://control.bluemix.net/account/user/profile"
+}
+
+variable "ibmcloud_api_key" {
+  description = "Enter your IBM Cloud API Key, you can get your IBM Cloud API key using: https://console.bluemix.net/iam#/apikeys"
+}
+
 variable ssh_key {
   description = "ssh public key"
   default = ""
@@ -22,10 +31,7 @@ variable publicvlanid {
   description = "public VLAN"
   default = "2279413"
 }
-variable slusername {
-  description = "sl user name"
-  default = "email goes here"
-}
+
 
 variable ssh_label {
   description = "ssh label"
