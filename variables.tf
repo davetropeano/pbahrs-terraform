@@ -5,19 +5,15 @@ variable userids {
 }
 
 variable "softlayer_username" {
-  description = "Enter your IBM Infrastructure (SoftLayer) full username, you can get this using: https://control.bluemix.net/account/user/profile"
 }
 
 variable "softlayer_api_key" {
-  description = "Enter your IBM Infrastructure (SoftLayer) API key, you can get this using: https://control.bluemix.net/account/user/profile"
 }
 
 variable "ibmcloud_api_key" {
-  description = "Enter your IBM Cloud API Key, you can get your IBM Cloud API key using: https://console.bluemix.net/iam#/apikeys"
 }
 
 variable ssh_key {
-  description = "ssh public key"
   default = ""
 }
 ################################
