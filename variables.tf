@@ -4,15 +4,6 @@ variable userids {
   default = "student1"
 }
 
-variable "softlayer_username" {
-}
-
-variable "softlayer_api_key" {
-}
-
-variable "ibmcloud_api_key" {
-}
-
 variable ssh_key {
   default = ""
 }
