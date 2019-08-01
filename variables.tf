@@ -24,7 +24,7 @@ variable publicvlanid {
 }
 variable slusername {
   description = "sl user name"
-  default = "bluecloudint@gmail.com"
+  default = "email goes here"
 }
 
 variable ssh_label {
@@ -46,7 +46,7 @@ variable datacenter {
 }
 variable domain {
   description = "domain of the VMs"
-  default = "mybluemix.com"
+  default = "domain goes herem"
 }
 variable vm_count {
   description = "number of VMs"
