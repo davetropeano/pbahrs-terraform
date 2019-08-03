@@ -1,8 +1,8 @@
-var "softlayer_username" {
+variable "softlayer_username" {
     description="IaaS username"
 }
 
-var "softlayer_api_key" {
+variable "softlayer_api_key" {
     description="IaaS API Key"
 }
 
