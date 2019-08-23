@@ -39,7 +39,7 @@ variable datacenter {
 }
 variable domain {
   description = "domain of the VMs"
-  default = "domain goes herem"
+  default = "test.com"
 }
 variable vm_count {
   description = "number of VMs"

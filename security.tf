@@ -22,6 +22,7 @@ resource "ibm_security_group_rule" "port_443" {
 # below are the policies for the group
 
 resource "ibm_security_group" "sg2" {
+    depends_on = ["ibm_security_group.sg1"]
     name = "sg2"
     description = "private app traffic"
 }
